@@ -1,6 +1,7 @@
 import Nav from "@/components/jointherealworld/Nav";
 import Timeline from "@/components/jointherealworld/Timeline";
 import Upgrade from "@/components/jointherealworld/Upgrade";
+import Whatyouwilllearn from "@/components/jointherealworld/Whatyouwilllearn";
 import React from "react";
 
 type Props = {};
@@ -11,6 +12,7 @@ const Join = (props: Props) => {
       <Nav />
       <Upgrade />
       <Timeline />
+      <Whatyouwilllearn />
     </div>
   );
 };
