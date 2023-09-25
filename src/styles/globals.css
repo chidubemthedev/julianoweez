@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-}
+} */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -24,4 +24,76 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+/* styles.css */
+
+/* Animate Circle */
+:root {
+  --circle-btn-bg: #e6c87d;
+  --circle-btn-text: #ffffff;
+  --circle-btn-speed: 0.3s;
+  --circle-btn-half-speed: 0.15s;
+  --circle-ease-out: cubic-bezier(0.61, 1, 0.88, 1);
+  --circle-ease-in: cubic-bezier(0.12, 0, 0.39, 0);
+}
+
+.reveal-circle {
+  position: relative;
+  overflow: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+
+.reveal-circle:hover {
+  color: var(--circle-btn-text);
+  background-color: var(--circle-btn-bg);
+  transition: background-color 0s linear var(--circle-btn-speed);
+}
+
+.reveal-circle::after {
+  pointer-events: none;
+  background-color: var(--circle-btn-bg);
+  transform: translateY(5em);
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  padding-top: 100%;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: auto;
+  border-radius: 50%;
+  transition: border-radius var(--circle-btn-half-speed) var(--circle-ease-in)
+      0s,
+    transform var(--circle-btn-speed) var(--circle-ease-in);
+}
+
+.reveal-circle:hover::after {
+  border-radius: 0%;
+  transform: translateY(0em);
+  transition: border-radius var(--circle-btn-half-speed) var(--circle-ease-out)
+      var(--circle-btn-half-speed),
+    transform var(--circle-btn-speed) var(--circle-ease-out);
+}
+
+.wayout-background {
+  background-image: url("/way-out.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.levelup-background {
+  background-image: url("/level-up.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.guide-background {
+  background-image: url("/guide-background.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
