@@ -1,6 +1,10 @@
 import React from "react";
 import ecommerce from "../../../assets/ecommerce.webp";
 import copywriting from "../../../assets/copywriting.webp";
+import stocks from "../../../assets/stocks.webp";
+import client from "../../../assets/client.webp";
+import crypto from "../../../assets/crypto.webp";
+import finance from "../../../assets/finance.webp";
 import Image from "next/image";
 
 type Props = {};
@@ -91,7 +95,9 @@ const Whatyouwilllearn = (props: Props) => {
         <div className="border border-white rounded-3xl p-8 flex flex-col items-center text-center bg-[#27292e]">
           <div className="flex justify-center items-center gap-4 mb-4">
             <Image src={ecommerce} alt="ecommerce" width={75} height={75} />
-            <h2 className="text-[38px] leading-[45px]">E-Commerce</h2>
+            <h2 className="text-[24px] md:text-[38px] leading-[45px]">
+              E-Commerce
+            </h2>
           </div>
           <p className="text-[20px] leading-[31px] mb-7">
             Sell profitable products online. Industry experts will train you to
@@ -115,12 +121,121 @@ const Whatyouwilllearn = (props: Props) => {
         <div className="border border-white rounded-3xl p-8 flex flex-col items-center text-center bg-[#27292e]">
           <div className="flex justify-center items-center gap-4 mb-4">
             <Image src={copywriting} alt="ecommerce" width={75} height={75} />
-            <h2 className="text-[38px] leading-[45px]">Copywriting</h2>
+            <h2 className="text-[24px] md:text-[38px] leading-[45px]">
+              Copywriting
+            </h2>
           </div>
           <p className="text-[20px] leading-[31px] mb-7">
             Master the art of selling with words. We'll give you an easy to
             follow guide on how to master the art of copywriting and secure a
             list of high-paying clients.
+          </p>
+          <iframe
+            src="https://customer-29d3r31yjz332bf4.cloudflarestream.com/310feb9e139b948b015e98cabeb78990/iframe"
+            style={{
+              border: "none",
+              height: "310.781px",
+              width: "100%",
+              display: "block",
+              boxSizing: "border-box",
+            }}
+            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+            allowFullScreen={true}
+          ></iframe>
+        </div>
+      </div>
+
+      <div className="flex flex-col md:flex-row gap-6 px-[4%] mt-7">
+        <div className="border border-white rounded-3xl p-8 flex flex-col items-center text-center bg-[#27292e]">
+          <div className="flex justify-center items-center gap-4 mb-4">
+            <Image src={stocks} alt="ecommerce" width={75} height={75} />
+            <h2 className="text-[24px] md:text-[38px] leading-[45px]">
+              Stocks
+            </h2>
+          </div>
+          <p className="text-[20px] leading-[31px] mb-7">
+            Multiply your capital through the stock market. We'll train you to
+            use technical analysis to find situations where there's a higher
+            upside than the downside.
+          </p>
+          <iframe
+            src="https://customer-29d3r31yjz332bf4.cloudflarestream.com/a1b0248c6b0ddbd784378e52f7ddbf66/iframe"
+            style={{
+              border: "none",
+              height: "310.781px",
+              width: "100%",
+              display: "block",
+              boxSizing: "border-box",
+            }}
+            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+            allowFullScreen={true}
+          ></iframe>
+        </div>
+
+        <div className="border border-white rounded-3xl p-8 flex flex-col items-center text-center bg-[#27292e]">
+          <div className="flex justify-center items-center gap-4 mb-4">
+            <Image src={client} alt="ecommerce" width={75} height={75} />
+            <h2 className="text-[24px] md:text-[38px] leading-[45px]">
+              Client Acquisition
+            </h2>
+          </div>
+          <p className="text-[20px] leading-[31px] mb-7">
+            You’ll learn how to get paid a premium price to complete simple
+            tasks, And the most effective methods to build a list of loyal
+            clients
+          </p>
+          <iframe
+            src="https://customer-29d3r31yjz332bf4.cloudflarestream.com/310feb9e139b948b015e98cabeb78990/iframe"
+            style={{
+              border: "none",
+              height: "310.781px",
+              width: "100%",
+              display: "block",
+              boxSizing: "border-box",
+            }}
+            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+            allowFullScreen={true}
+          ></iframe>
+        </div>
+      </div>
+
+      <div className="flex flex-col md:flex-row gap-6 px-[4%] mt-7">
+        <div className="border border-white rounded-3xl p-8 flex flex-col items-center text-center bg-[#27292e]">
+          <div className="flex justify-center items-center gap-4 mb-4">
+            <Image src={crypto} alt="ecommerce" width={75} height={75} />
+            <h2 className="text-[24px] md:text-[38px] leading-[45px]">
+              Crypto Investing
+            </h2>
+          </div>
+          <p className="text-[20px] leading-[31px] mb-7">
+            Profit from the world’s highest-performing assets. We’ll focus on
+            attacking crypto markets from 3 angles: Long-term, medium-term, and
+            short-term.
+          </p>
+          <iframe
+            src="https://customer-29d3r31yjz332bf4.cloudflarestream.com/a1b0248c6b0ddbd784378e52f7ddbf66/iframe"
+            style={{
+              border: "none",
+              height: "310.781px",
+              width: "100%",
+              display: "block",
+              boxSizing: "border-box",
+            }}
+            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+            allowFullScreen={true}
+          ></iframe>
+        </div>
+
+        <div className="border border-white rounded-3xl p-8 flex flex-col items-center text-center bg-[#27292e]">
+          <div className="flex justify-center items-center gap-4 mb-4">
+            <Image src={finance} alt="ecommerce" width={75} height={75} />
+            <h2 className="text-[24px] md:text-[38px] leading-[45px]">
+              Business & Finance
+            </h2>
+          </div>
+          <p className="text-[20px] leading-[31px] mb-7">
+            Master the fundamental skills of business. We’ll teach you every
+            skill the hyper successful entrepreneur of tomorrow needs to master.
           </p>
           <iframe
             src="https://customer-29d3r31yjz332bf4.cloudflarestream.com/310feb9e139b948b015e98cabeb78990/iframe"
