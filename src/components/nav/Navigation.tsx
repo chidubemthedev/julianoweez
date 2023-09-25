@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../../assets/jwaller-logo.png";
 import Image from "next/image";
+import Link from "next/link";
 
 type Props = {};
 
@@ -28,9 +29,11 @@ const Navigation = (props: Props) => {
         </div>
       </div>
       <div>
-        <button className="border-2 border-[#e6c87d] px-4 py-1 reveal-circle">
-          JOIN US
-        </button>
+        <Link href="/therealworld">
+          <button className="border-2 border-[#e6c87d] px-4 py-1 reveal-circle">
+            JOIN US
+          </button>
+        </Link>
       </div>
     </div>
   );

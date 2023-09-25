@@ -1,6 +1,7 @@
 import React from "react";
 import jbutton from "../../../assets/jbutton.png";
 import Image from "next/image";
+import Link from "next/link";
 
 type Props = {};
 
@@ -30,7 +31,7 @@ const Wayout = (props: Props) => {
             </span>
           </button> */}
 
-          <a
+          <Link
             data-w-id="4dd4e19f-65d0-0b5f-65dc-d389a91e0560"
             href="/therealworld"
             style={{
@@ -84,7 +85,7 @@ const Wayout = (props: Props) => {
                 border: "0px none rgb(0, 0, 238)",
               }}
             />
-          </a>
+          </Link>
         </div>
       </div>
     </div>
