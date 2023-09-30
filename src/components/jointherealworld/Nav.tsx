@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import mainImage from "../../../assets/join-main-image.webp";
+import play from "../../../assets/play.svg";
 import Link from "next/link";
 
 type Props = {};
@@ -177,6 +178,14 @@ const Nav = (props: Props) => {
             </div>
           </div>
         </div>
+
+        {/* <div>
+          <iframe
+            src="https://customer-29d3r31yjz332bf4.cloudflarestream.com/fc9bf6e00fb297a9a676c5f45ca417dd/iframe?muted=true&autoplay=true&poster=https%3A%2F%2Fcustomer-29d3r31yjz332bf4.cloudflarestream.com%2Ffc9bf6e00fb297a9a676c5f45ca417dd%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
+            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+            className="md:w-[800px] md:h-[450px]"
+          ></iframe>
+        </div> */}
 
         <div className="flex flex-col md:flex-row justify-center items-center gap-5 mt-[30px]">
           <Link href="/checkout">

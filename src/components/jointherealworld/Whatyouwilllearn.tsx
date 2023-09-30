@@ -159,7 +159,7 @@ const Whatyouwilllearn = (props: Props) => {
             upside than the downside.
           </p>
           <iframe
-            src="https://customer-29d3r31yjz332bf4.cloudflarestream.com/a1b0248c6b0ddbd784378e52f7ddbf66/iframe"
+            src="https://customer-29d3r31yjz332bf4.cloudflarestream.com/7ee65ac956bd307331e0055cf6b367c9/iframe"
             style={{
               border: "none",
               height: "310.781px",
@@ -185,7 +185,7 @@ const Whatyouwilllearn = (props: Props) => {
             clients
           </p>
           <iframe
-            src="https://customer-29d3r31yjz332bf4.cloudflarestream.com/310feb9e139b948b015e98cabeb78990/iframe"
+            src="https://customer-29d3r31yjz332bf4.cloudflarestream.com/09bdf2aea42ee04718120770ece2cbf7/iframe"
             style={{
               border: "none",
               height: "310.781px",
@@ -213,7 +213,7 @@ const Whatyouwilllearn = (props: Props) => {
             short-term.
           </p>
           <iframe
-            src="https://customer-29d3r31yjz332bf4.cloudflarestream.com/a1b0248c6b0ddbd784378e52f7ddbf66/iframe"
+            src="https://customer-29d3r31yjz332bf4.cloudflarestream.com/adebd8f7f5717742beaea5970c23de9e/iframe"
             style={{
               border: "none",
               height: "310.781px",
@@ -238,7 +238,7 @@ const Whatyouwilllearn = (props: Props) => {
             skill the hyper successful entrepreneur of tomorrow needs to master.
           </p>
           <iframe
-            src="https://customer-29d3r31yjz332bf4.cloudflarestream.com/310feb9e139b948b015e98cabeb78990/iframe"
+            src="https://customer-29d3r31yjz332bf4.cloudflarestream.com/c17d1836f7dde7827249a102bbc80fa9/iframe"
             style={{
               border: "none",
               height: "310.781px",
