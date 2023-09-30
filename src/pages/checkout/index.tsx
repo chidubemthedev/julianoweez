@@ -5,9 +5,9 @@ type Props = {};
 
 const index = (props: Props) => {
   return (
-    <>
+    <div className="text-white">
       <Checkout />
-    </>
+    </div>
   );
 };
 
