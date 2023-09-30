@@ -2,6 +2,7 @@ import React from "react";
 import miniGlobe from "../../../assets/trw-knight-globe.svg";
 import globe from "../../../assets/trw-knight-globe-with-ring.svg";
 import Image from "next/image";
+import BuyButtonComponent from "./BuyButtonComponent";
 
 type Props = {};
 
@@ -75,10 +76,7 @@ const Checkout = (props: Props) => {
           </div>
 
           <div className="flex flex-col gap-8 justify-center items-center mt-7">
-            <stripe-buy-button
-              buy-button-id="buy_btn_1NvuSwKwGyWbKdCLZlv02hyu"
-              publishable-key="pk_test_51MQ3tnKwGyWbKdCLTTvFwIltPOIGETUxr7hvIJNYQH8BEiHUnb6S5q8IQsy5aDF3Lg8cPXZoqtMpvOQrrHF6Yp8d00JAnHpiwX"
-            ></stripe-buy-button>
+            <BuyButtonComponent />
 
             <div>
               <a
