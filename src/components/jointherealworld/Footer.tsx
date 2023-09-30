@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import world from "../../../assets/the-real-world.webp";
 import Image from "next/image";
+import FooterNew from "./FooterNew";
 
 type Props = {};
 
@@ -70,7 +71,7 @@ const Footer = (props: Props) => {
         </Link>
       </div>
 
-      <div className="flex flex-col space-y-6 text-[20px] leading-[31px]">
+      {/* <div className="flex flex-col space-y-6 text-[20px] leading-[31px]">
         <div className="flex gap-[30%] bg-red-500 w-[60%]">
           <p className="underline underline-offset-4">Log In</p>
           <p>
@@ -104,7 +105,9 @@ const Footer = (props: Props) => {
             221 N. Broad St.Middletown, DE 19709
           </p>
         </div>
-      </div>
+      </div> */}
+
+      <FooterNew />
 
       <div className="text-center space-y-7 mt-9 px-[2%]">
         <p>
