@@ -10,7 +10,7 @@ const Nav = (props: Props) => {
     <div>
       <div className="flex justify-between items-center py-[20px] px-[2%]">
         <div>
-          <Link href="#">
+          <Link href="/checkout">
             <button className="reveal-circle border border-[#e8e8e8] text-[white] text-[19px] leading-[29px] font-bold px-4 py-1 rounded-md">
               LOGIN
             </button>
@@ -18,7 +18,7 @@ const Nav = (props: Props) => {
         </div>
 
         <div>
-          <Link href="/therealworld">
+          <Link href="/checkout">
             <button className="bg-[#ffbb38] text-[#0b0e13] text-[19px] leading-[29px] font-bold px-4 py-1 rounded-md">
               JOIN NOW
             </button>
@@ -178,11 +178,13 @@ const Nav = (props: Props) => {
           </div>
         </div>
 
-        <div className="flex justify-center items-center gap-3">
-          <button className="bg-[#ffbb38] text-[#0b0e13] text-[19px] leading-[29px] font-bold px-4 py-1 rounded-md">
-            JOIN THE REAL WORLD
-          </button>
-          <button className="border border-[#e8e8e8] px-4 py-1 rounded-md">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-5 mt-[30px]">
+          <Link href="/checkout">
+            <button className="bg-[#ffbb38] text-[#0b0e13] text-[19px] leading-[29px] font-bold px-4 py-4 rounded-md">
+              JOIN THE REAL WORLD
+            </button>
+          </Link>
+          <button className="border border-[#e8e8e8] px-[65px] py-4 rounded-md">
             SCROLL DOWN
           </button>
         </div>

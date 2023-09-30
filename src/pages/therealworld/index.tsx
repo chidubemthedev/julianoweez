@@ -1,4 +1,5 @@
 import Nav from "@/components/jointherealworld/Nav";
+import Reviews from "@/components/jointherealworld/Reviews";
 import Timeline from "@/components/jointherealworld/Timeline";
 import Upgrade from "@/components/jointherealworld/Upgrade";
 import Whatyouwilllearn from "@/components/jointherealworld/Whatyouwilllearn";
@@ -12,7 +13,8 @@ const Join = (props: Props) => {
       <Nav />
       <Upgrade />
       <Timeline />
-      <Whatyouwilllearn />
+      {/* <Whatyouwilllearn /> */}
+      <Reviews />
     </div>
   );
 };
