@@ -162,7 +162,7 @@ const Checkout = (props: Props) => {
                       <div className="mt-[50px]">
                         <a
                           className="buy-with-crypto border border-[#f1ba13] bg-[#f1ba13] rounded-md py-3 px-[79px]"
-                          href="https://commerce.coinbase.com/checkout/27fb1896-2175-4453-80b4-7c379958f6da"
+                          href="https://commerce.coinbase.com/checkout/aa91af40-a731-4f07-8edc-97eefe9257d8"
                         >
                           PAY WITH CRYPTO
                         </a>
@@ -176,7 +176,7 @@ const Checkout = (props: Props) => {
             <div>
               <a
                 className="buy-with-crypto border border-[#f1ba13] rounded-md py-3 px-[79px]"
-                href="https://commerce.coinbase.com/checkout/27fb1896-2175-4453-80b4-7c379958f6da"
+                href="https://commerce.coinbase.com/checkout/aa91af40-a731-4f07-8edc-97eefe9257d8"
               >
                 PAY WITH CRYPTO
               </a>

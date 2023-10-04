@@ -40,11 +40,17 @@ const Nav = (props: Props) => {
           </h1>
         </div>
 
-        <div>
+        <div className="mt-4">
+          {/* <video width={800} controls>
+            <source
+              src="https://customer-29d3r31yjz332bf4.cloudflarestream.com/fc9bf6e00fb297a9a676c5f45ca417dd/iframe?muted=true&autoplay=true&poster=https%3A%2F%2Fcustomer-29d3r31yjz332bf4.cloudflarestream.com%2Ffc9bf6e00fb297a9a676c5f45ca417dd%2Fthumbnails%2Fthumbnail.jpg"
+              type="video/mp4"
+            />
+          </video> */}
           <iframe
-            src="https://customer-29d3r31yjz332bf4.cloudflarestream.com/fc9bf6e00fb297a9a676c5f45ca417dd/iframe?muted=true&autoplay=true&poster=https%3A%2F%2Fcustomer-29d3r31yjz332bf4.cloudflarestream.com%2Ffc9bf6e00fb297a9a676c5f45ca417dd%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
+            src="https://customer-29d3r31yjz332bf4.cloudflarestream.com/fc9bf6e00fb297a9a676c5f45ca417dd/iframe?muted=true&autoplay=true&poster=https%3A%2F%2Fcustomer-29d3r31yjz332bf4.cloudflarestream.com%2Ffc9bf6e00fb297a9a676c5f45ca417dd%2Fthumbnails%2Fthumbnail.jpg"
             allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-            className="md:w-[800px] md:h-[450px]"
+            className="w-[100vw] h-[27vh] md:w-[800px] md:h-[450px]"
           ></iframe>
         </div>
 
