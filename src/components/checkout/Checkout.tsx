@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import miniGlobe from "../../../assets/trw-knight-globe.svg";
 import globe from "../../../assets/trw-knight-globe-with-ring.svg";
 import Image from "next/image";
@@ -12,10 +12,25 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { ErrorIcon, CheckMarkIcon } from "../ui/icons";
+import { useRouter } from "next/router";
 
 type Props = {};
 
 const Checkout = (props: Props) => {
+  const [registerationInfo, setRegisterationInfo] = useState({
+    email: "",
+    password: "",
+  });
+
+  const router = useRouter();
+
+  const cryptoPaymentHandler = () => {
+    console.log("cryptoPaymentHandler");
+    router.push(
+      "https://commerce.coinbase.com/checkout/aa91af40-a731-4f07-8edc-97eefe9257d8"
+    );
+  };
+
   return (
     <div className="flex flex-col-reverse md:flex-row bg-[#0d1016]">
       <div className="w-full md:w-[50%] md:h-screen space-y-4 md:pl-[6%] flex flex-col items-center md:items-start justify-center text-center md:text-left text-[20px] leading-[30px] mt-5 md:mt-0">
@@ -52,7 +67,28 @@ const Checkout = (props: Props) => {
             <br />
             <input
               type="email"
+              onChange={(e) =>
+                setRegisterationInfo({
+                  ...registerationInfo,
+                  email: e.target.value,
+                })
+              }
               placeholder="example@gmail.com"
+              className="w-full bg-transparent border border-white rounded-md h-[50px] text-[16px] leading-[30px] mt-2 mb-2 p-2"
+            />
+          </div>
+          <div>
+            <label>Password</label>
+            <br />
+            <input
+              type="password"
+              onChange={(e) =>
+                setRegisterationInfo({
+                  ...registerationInfo,
+                  password: e.target.value,
+                })
+              }
+              placeholder="Password"
               className="w-full bg-transparent border border-white rounded-md h-[50px] text-[16px] leading-[30px] mt-2 mb-2 p-2"
             />
           </div>
@@ -146,8 +182,8 @@ const Checkout = (props: Props) => {
 
           <div className="flex flex-col gap-8 justify-center items-center mt-7">
             <Dialog>
-              <DialogTrigger className="bg-[#f1ba13] rounded-md py-3 px-[87px]">
-                PAY WITH CARD{" "}
+              <DialogTrigger className="bg-[#f1ba13] rounded-md py-3 px-[95px]">
+                PAY WITH CARD
               </DialogTrigger>
               <DialogContent>
                 <DialogHeader>
@@ -160,12 +196,12 @@ const Checkout = (props: Props) => {
                       <p>There was an error processing your payment.</p>
                       <p>Please, pay with crypto!</p>
                       <div className="mt-[50px]">
-                        <a
-                          className="buy-with-crypto border border-[#f1ba13] bg-[#f1ba13] rounded-md py-3 px-[79px]"
-                          href="https://commerce.coinbase.com/checkout/aa91af40-a731-4f07-8edc-97eefe9257d8"
+                        <button
+                          onClick={cryptoPaymentHandler}
+                          className="bg-[#f1ba13] rounded-md py-3 px-[87px]"
                         >
                           PAY WITH CRYPTO
-                        </a>
+                        </button>
                       </div>
                     </div>
                   </DialogDescription>
@@ -174,12 +210,12 @@ const Checkout = (props: Props) => {
             </Dialog>
 
             <div>
-              <a
-                className="buy-with-crypto border border-[#f1ba13] rounded-md py-3 px-[79px]"
-                href="https://commerce.coinbase.com/checkout/aa91af40-a731-4f07-8edc-97eefe9257d8"
+              <button
+                onClick={cryptoPaymentHandler}
+                className="border border-[#f1ba13] rounded-md py-3 px-[87px]"
               >
                 PAY WITH CRYPTO
-              </a>
+              </button>
             </div>
           </div>
         </div>
