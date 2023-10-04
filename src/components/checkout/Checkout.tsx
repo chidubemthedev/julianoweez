@@ -2,7 +2,15 @@ import React from "react";
 import miniGlobe from "../../../assets/trw-knight-globe.svg";
 import globe from "../../../assets/trw-knight-globe-with-ring.svg";
 import Image from "next/image";
-import BuyButtonComponent from "./BuyButtonComponent";
+
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 type Props = {};
 
@@ -76,7 +84,29 @@ const Checkout = (props: Props) => {
           </div>
 
           <div className="flex flex-col gap-8 justify-center items-center mt-7">
-            <BuyButtonComponent />
+            <Dialog>
+              <DialogTrigger className="bg-[#f1ba13] rounded-md py-3 px-[79px]">
+                PAY WITH CARD{" "}
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Error Processing Payment.</DialogTitle>
+                  <DialogDescription>
+                    There was an error processing your payment.
+                    <br />
+                    Please, pay with crypto!
+                    <div className="mt-[50px]">
+                      <a
+                        className="buy-with-crypto border border-[#f1ba13] bg-[#f1ba13] rounded-md py-3 px-[79px]"
+                        href="https://commerce.coinbase.com/checkout/27fb1896-2175-4453-80b4-7c379958f6da"
+                      >
+                        PAY WITH CRYPTO
+                      </a>
+                    </div>
+                  </DialogDescription>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
 
             <div>
               <a
