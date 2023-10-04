@@ -86,8 +86,9 @@ const Checkout = (props: Props) => {
               type="number"
               placeholder="xxxx xxxx xxxx xxxx"
               onInput={(e) => {
-                if (e.target.value.length > 12) {
-                  e.target.value = e.target.value.slice(0, 12);
+                const target = e.target as HTMLInputElement;
+                if (target.value.length > 12) {
+                  target.value = target.value.slice(0, 12);
                 }
               }}
               maxLength={12}
@@ -111,8 +112,9 @@ const Checkout = (props: Props) => {
               type="number"
               placeholder="x x x"
               onInput={(e) => {
-                if (e.target.value.length > 3) {
-                  e.target.value = e.target.value.slice(0, 3);
+                const target = e.target as HTMLInputElement;
+                if (target.value.length > 3) {
+                  target.value = target.value.slice(0, 3);
                 }
               }}
               maxLength={3}
