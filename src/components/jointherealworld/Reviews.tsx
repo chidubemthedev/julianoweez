@@ -27,7 +27,7 @@ type Props = {};
 const Reviews = (props: Props) => {
   return (
     <div className="mt-[70px]">
-      <h1 className="text-[48px] leading-[56px] text-center">
+      <h1 className="text-[26px] md:text-[48px] leading-[56px] text-center">
         OUR STUDENTS' <span className="font-bold">REVIEWS</span>
       </h1>
 

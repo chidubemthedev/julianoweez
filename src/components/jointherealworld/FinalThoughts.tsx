@@ -8,8 +8,8 @@ type Props = {};
 const FinalThoughts = (props: Props) => {
   return (
     <div className="flex flex-col md:flex-row bg-[#0b0e13] py-10 px-[3%] gap-[40px]">
-      <div className="md:w-[50%] space-y-6 text-[20px] leading-[31px]">
-        <h1 className="text-[48px] leading-[24px]">
+      <div className="md:w-[50%] space-y-6 md:text-[20px] leading-[31px]">
+        <h1 className="text-[30px] md:text-[48px] leading-[24px]">
           FINAL <span className="font-bold">THOUGHTS</span>
         </h1>
         <p>

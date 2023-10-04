@@ -9,10 +9,10 @@ const Escape = (props: Props) => {
     <div>
       <div className="flex flex-col text-center items-center py-[20px] px-[2%] mt-[40px]">
         <Image src={mainImage} alt="main" width={126} height={126} />
-        <h1 className="text-[48px] leading-[56px]">
+        <h1 className="text-[20px] md:text-[48px] leading-[56px]">
           READY TO ESCAPE? <span className="font-bold">JOIN NOW</span>
         </h1>
-        <p className="mt-10 text-[20px] leading-[31px]">
+        <p className="mt-10 md:text-[20px] leading-[31px]">
           Our modern, practical approach to teaching has led to tens of
           thousands of our <br /> students generating money from anywhere in the
           world.
@@ -22,14 +22,16 @@ const Escape = (props: Props) => {
       <div className="space-y-10">
         <div className="flex flex-col md:flex-row border border-white rounded-lg mx-[3%]">
           <div className="md:w-[40%] space-y-3 my-10 px-[2%]">
-            <h1 className="text-[38px] leading-[45px]">Content Creation</h1>
-            <p className="text-[20px] leading-[31px] underline-offset-4 underline">
+            <h1 className="text-[20px] md:text-[38px] leading-[45px]">
+              Content Creation
+            </h1>
+            <p className="text-[16px] md:text-[20px] md:leading-[31px] underline-offset-4 underline">
               Mena, 34, GH
             </p>
-            <p className="text-[20px] leading-[31px]">
+            <p className="text-[16px] md:text-[20px] md:leading-[31px]">
               New revenue: $2k+/month
             </p>
-            <p className="text-[20px] leading-[31px]">
+            <p className="text-[16px] md:text-[20px] md:leading-[31px]">
               The Real World's positive impact on her boyfriend led Mena to
               join...
               <br /> Now, she makes over $2,000/month due to the lessons she
@@ -47,14 +49,16 @@ const Escape = (props: Props) => {
 
         <div className="flex flex-col md:flex-row border border-white rounded-lg mx-[3%]">
           <div className="md:w-[40%] space-y-3 my-10 px-[2%]">
-            <h1 className="text-[38px] leading-[45px]">Business Mastery</h1>
-            <p className="text-[20px] leading-[31px] underline-offset-4 underline">
+            <h1 className="text-[20px] md:text-[38px] leading-[45px]">
+              Business Mastery
+            </h1>
+            <p className="text-[16px] md:text-[20px] md:leading-[31px] underline-offset-4 underline">
               Nox, 34, US
             </p>
-            <p className="text-[20px] leading-[31px]">
+            <p className="text-[16px] md:text-[20px] md:leading-[31px]">
               New revenue: $200k+/month
             </p>
-            <p className="text-[20px] leading-[31px]">
+            <p className="text-[16px] md:text-[20px] md:leading-[31px]">
               Nox had $3,000 to his name when he joined The Real World...
               <br /> He now generates $200,000/month as a business consultant.
             </p>
@@ -70,14 +74,16 @@ const Escape = (props: Props) => {
 
         <div className="flex flex-col md:flex-row border border-white rounded-lg mx-[3%]">
           <div className="md:w-[40%] space-y-3 my-10 px-[2%]">
-            <h1 className="text-[38px] leading-[45px]">Freelancing</h1>
-            <p className="text-[20px] leading-[31px] underline-offset-4 underline">
+            <h1 className="text-[20px] md:text-[38px] leading-[45px]">
+              Freelancing
+            </h1>
+            <p className="text-[16px] md:text-[20px] md:leading-[31px] underline-offset-4 underline">
               Jordan, 34, GB
             </p>
-            <p className="text-[20px] leading-[31px]">
+            <p className="text-[16px] md:text-[20px] md:leading-[31px]">
               New revenue: $60,000/60 days
             </p>
-            <p className="text-[20px] leading-[31px]">
+            <p className="text-[16px] md:text-[20px] md:leading-[31px]">
               Before joining Jordan made $100/day delivering packages. Since
               joining he has made $60,000 in just 60 days.
             </p>
@@ -93,14 +99,16 @@ const Escape = (props: Props) => {
 
         <div className="flex flex-col md:flex-row border border-white rounded-lg mx-[3%]">
           <div className="md:w-[40%] space-y-3 my-10 px-[2%]">
-            <h1 className="text-[38px] leading-[45px]">Crypto Investing</h1>
-            <p className="text-[20px] leading-[31px] underline-offset-4 underline">
+            <h1 className="text-[20px] md:text-[38px] leading-[45px]">
+              Crypto Investing
+            </h1>
+            <p className="text-[16px] md:text-[20px] md:leading-[31px] underline-offset-4 underline">
               AC, 34, US
             </p>
-            <p className="text-[20px] leading-[31px]">
+            <p className="text-[16px] md:text-[20px] md:leading-[31px]">
               New revenue: $40,000/month
             </p>
-            <p className="text-[20px] leading-[31px]">
+            <p className="text-[16px] md:text-[20px] md:leading-[31px]">
               Chess Master AC joined TRW and now makes $40k+ every month trading
               crypto for 15 minutes daily.
             </p>
@@ -116,14 +124,16 @@ const Escape = (props: Props) => {
 
         <div className="flex flex-col md:flex-row border border-white rounded-lg mx-[3%]">
           <div className="md:w-[40%] space-y-3 my-10 px-[2%]">
-            <h1 className="text-[38px] leading-[45px]">Ecommerce</h1>
-            <p className="text-[20px] leading-[31px] underline-offset-4 underline">
+            <h1 className="text-[20px] md:text-[38px] leading-[45px]">
+              Ecommerce
+            </h1>
+            <p className="text-[16px] md:text-[20px] md:leading-[31px] underline-offset-4 underline">
               Dana, 34, US
             </p>
-            <p className="text-[20px] leading-[31px]">
+            <p className="text-[16px] md:text-[20px] md:leading-[31px]">
               New revenue: $115,000/5 months
             </p>
-            <p className="text-[20px] leading-[31px]">
+            <p className="text-[16px] md:text-[20px] md:leading-[31px]">
               Dana was working in construction but now makes hundreds of
               thousands of dollars with Ecom.
             </p>

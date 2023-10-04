@@ -13,7 +13,7 @@ type Props = {};
 const TrustPilot = (props: Props) => {
   return (
     <div>
-      <h1 className="text-center mt-16 text-[24px] leading-[31px]">
+      <h1 className="text-center mt-16 md:text-[24px] leading-[31px]">
         Trustpilot Reviews
         <span className="font-bold"> 365 • Excellent | 4.8</span>
         <div className="flex justify-center my-[20px]">
