@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import miniGlobe from "../../../assets/trw-knight-globe.svg";
-import globe from "../../../assets/trw-knight-globe-with-ring.svg";
 import Image from "next/image";
+import { useState } from "react";
+import globe from "../../../assets/trw-knight-globe-with-ring.svg";
+import miniGlobe from "../../../assets/trw-knight-globe.svg";
 
 import {
   Dialog,
@@ -11,25 +11,18 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { ErrorIcon, CheckMarkIcon } from "../ui/icons";
-import { useRouter } from "next/router";
+import { CheckMarkIcon, ErrorIcon } from "../ui/icons";
+import PayCrypto from "./PayCrypto";
 
 type Props = {};
 
 const Checkout = (props: Props) => {
   const [registerationInfo, setRegisterationInfo] = useState({
     email: "",
-    password: "",
+    name: "",
   });
 
-  const router = useRouter();
-
-  const cryptoPaymentHandler = () => {
-    console.log("cryptoPaymentHandler");
-    router.push(
-      "https://commerce.coinbase.com/checkout/aa91af40-a731-4f07-8edc-97eefe9257d8"
-    );
-  };
+  const isDisabled = registerationInfo.email === "";
 
   return (
     <div className="flex flex-col-reverse md:flex-row bg-[#0d1016]">
@@ -67,41 +60,37 @@ const Checkout = (props: Props) => {
             <br />
             <input
               type="email"
-              onChange={(e) =>
-                setRegisterationInfo({
-                  ...registerationInfo,
-                  email: e.target.value,
-                })
-              }
+              onChange={(e) => {
+                const email = e.target.value;
+                setRegisterationInfo({ ...registerationInfo, email });
+              }}
               placeholder="example@gmail.com"
               className="w-full bg-transparent border border-white rounded-md h-[50px] text-[16px] leading-[30px] mt-2 mb-2 p-2"
             />
           </div>
-          <div>
+          {/* <div>
             <label>Password</label>
             <br />
             <input
               type="password"
-              onChange={(e) =>
-                setRegisterationInfo({
-                  ...registerationInfo,
-                  password: e.target.value,
-                })
-              }
               placeholder="Password"
               className="w-full bg-transparent border border-white rounded-md h-[50px] text-[16px] leading-[30px] mt-2 mb-2 p-2"
             />
-          </div>
+          </div> */}
           <div>
-            <label>First Name</label>
+            <label>Full Name</label>
             <br />
             <input
               type="text"
+              onChange={(e) => {
+                const name = e.target.value;
+                setRegisterationInfo({ ...registerationInfo, name });
+              }}
               placeholder="First Name"
               className="w-full bg-transparent border border-white rounded-md h-[50px] text-[16px] leading-[30px] mt-2 mb-2 p-2"
             />
           </div>
-          <div>
+          {/* <div>
             <label>Last Name</label>
             <br />
             <input
@@ -109,7 +98,7 @@ const Checkout = (props: Props) => {
               placeholder="Last Name"
               className="w-full bg-transparent border border-white rounded-md h-[50px] text-[16px] leading-[30px] mt-2 mb-2 p-2"
             />{" "}
-          </div>
+          </div> */}
 
           <div className="flex items-center gap-[9px] mt-8 mb-4">
             <CheckMarkIcon />
@@ -196,12 +185,11 @@ const Checkout = (props: Props) => {
                       <p>There was an error processing your payment.</p>
                       <p>Please, pay with crypto!</p>
                       <div className="mt-[50px]">
-                        <button
-                          onClick={cryptoPaymentHandler}
-                          className="bg-[#f1ba13] rounded-md py-3 px-[87px]"
-                        >
-                          PAY WITH CRYPTO
-                        </button>
+                        <PayCrypto
+                          isDisabled={isDisabled}
+                          email={registerationInfo.email}
+                          name={registerationInfo.name}
+                        />
                       </div>
                     </div>
                   </DialogDescription>
@@ -210,12 +198,11 @@ const Checkout = (props: Props) => {
             </Dialog>
 
             <div>
-              <button
-                onClick={cryptoPaymentHandler}
-                className="border border-[#f1ba13] rounded-md py-3 px-[87px]"
-              >
-                PAY WITH CRYPTO
-              </button>
+              <PayCrypto
+                isDisabled={isDisabled}
+                email={registerationInfo.email}
+                name={registerationInfo.name}
+              />
             </div>
           </div>
         </div>
