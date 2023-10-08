@@ -34,7 +34,7 @@ const PayCrypto = ({ isDisabled, email, name }: Props) => {
 
   return (
     <CoinbaseCommerceButton
-      onChargeSuccess={onChargeSuccess}
+      // onChargeSuccess={onChargeSuccess}
       //   styled={true}
       checkoutId={"aa91af40-a731-4f07-8edc-97eefe9257d8"}
       style={{

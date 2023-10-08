@@ -22,7 +22,7 @@ const Checkout = (props: Props) => {
     name: "",
   });
 
-  const isDisabled = registerationInfo.email === "";
+  const isDisabled = registerationInfo.name === "";
 
   return (
     <div className="flex flex-col-reverse md:flex-row bg-[#0d1016]">
@@ -55,7 +55,7 @@ const Checkout = (props: Props) => {
             <CheckMarkIcon />
             <h2 className="font-bold text-[18px]">PERSONAL INFORMATION</h2>
           </div>
-          <div>
+          {/* <div>
             <label className="">Email Address</label>
             <br />
             <input
@@ -67,7 +67,7 @@ const Checkout = (props: Props) => {
               placeholder="example@gmail.com"
               className="w-full bg-transparent border border-white rounded-md h-[50px] text-[16px] leading-[30px] mt-2 mb-2 p-2"
             />
-          </div>
+          </div> */}
           {/* <div>
             <label>Password</label>
             <br />
